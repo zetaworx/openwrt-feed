@@ -7,8 +7,8 @@
 
 include $(TOPDIR)/rules.mk
 
-NETXMS_RELEASE:=5.1
-NETXMS_BUILD:=1.8
+NETXMS_RELEASE:=5.2
+NETXMS_BUILD:=8
 
 PKG_NAME:=netxms
 PKG_LICENSE=GPL-2.0+
@@ -17,7 +17,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=netxms-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://www.netxms.org/download/releases/$(NETXMS_RELEASE)/
-PKG_HASH:=9e428f25dad4519fec7b96b16915494867e3eae6f320fb3f69e892404993f068
+PKG_HASH:=0f3dd7855e88e908e15792f624b154c7e043282e875e82aa29224315f4c8066a
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_INSTALL:=1
@@ -44,7 +44,7 @@ $(call Package/netxms/Default)
 	SECTION:=libs
 	CATEGORY:=Libraries
 	TITLE+= common libraries
-	DEPENDS:=+libatomic +libexpat +libpthread +libstdcpp +zlib +libpcre +libpcre32 +libopenssl
+	DEPENDS:=+libatomic +libexpat +libpthread +libstdcpp +zlib +libpcre2 +libopenssl
 endef
 
 define Package/netxms-base/description
